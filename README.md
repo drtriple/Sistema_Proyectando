@@ -14,7 +14,7 @@ Los datos en este enunciado son básicos, los deben de complementar acorde a las
 problema propuesto.
 
 ## Diagrama de Clases UML
-
+![form](https://raw.githubusercontent.com/drtriple/Sistema_Proyectando/refs/heads/main/Diagrama.png)
 
 ### > Explicación de las relaciones
 
@@ -72,7 +72,7 @@ problema propuesto.
 
 **Explicación:** Cada fase del ciclo de vida del software (como análisis, pruebas, etc.) contiene uno o varios procesos específicos.
 
-#### **10. RegistroProceso
+#### 10. RegistroProceso
 **Relaciones:**
 
 RegistroProceso --> Programador
