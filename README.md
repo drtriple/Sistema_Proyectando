@@ -86,8 +86,39 @@ RegistroProceso --> Proceso
 **Explicación:** Esta entidad registra el trabajo que un programador realiza en un proceso específico de un proyecto. Incluye información como la fecha, tiempo empleado y estado.
 Permite múltiples registros del mismo proceso en distintas fechas, como se solicita en el problema.
 
+## Requisitos Funcionales
 
-## Requisitos
+**RF01 – Registro de Clientes**: El sistema debe permitir registrar clientes con sus datos personales, múltiples direcciones y teléfonos.
+
+**RF02 – Registro de Programadores**: El sistema debe permitir registrar programadores, incluyendo múltiples direcciones y números de contacto.
+
+**RF03 – Autenticación de Usuarios**: El sistema debe permitir a los programadores acceder mediante usuario y contraseña para registrar su trabajo.
+
+**RF04 – Gestión de Proyectos**: El sistema debe permitir registrar proyectos asociados a un cliente, incluyendo fechas, descripción y participantes.
+
+**RF05 – Gestión de Fases y Procesos**: El sistema debe permitir definir fases del ciclo de vida del software y asociar múltiples procesos a cada fase.
+
+**RF06 – Asignación de Programadores a Proyectos**: El sistema debe permitir asignar uno o más programadores a uno o más proyectos.
+
+**RF07 – Registro de Actividades de Programadores**: El sistema debe registrar qué programador realizó qué proceso, en qué proyecto, con fecha, duración y estado del trabajo.
+
+**RF08 – Consulta de Participación y Tiempos**: El sistema debe mostrar los programadores involucrados en un proyecto, los procesos realizados y el tiempo empleado por cada uno.
+
+**RF09 – Control de Estado de Fases y Procesos**: El sistema debe permitir registrar el estado de cada proceso dentro de cada fase (ej. pendiente, en progreso, completado).
+
+## Requisitos No Funcionales
+
+**RNF01 – Plataforma de Desarrollo**: El sistema debe ser desarrollado en .NET Framework.
+
+**RNF02 – Persistencia de Datos**: El sistema debe utilizar una base de datos relacional SQL Server para almacenar la información.
+
+**RNF03 – Interfaz Amigable**: El sistema debe contar con una interfaz simple y clara, adecuada para propósitos educativos.
+
+**RNF04 – Seguridad Básica**: El sistema debe implementar autenticación simple con validación de usuario y contraseña.
+
+**RNF05 – Modularidad del Código**: El código debe estar organizado en capas mediante un Frontend tipo Aplicación Web .NET y un Backend tipo API Web .NET, aplicando buenas prácticas.
+
+## Requisitos Técnicos
 
 **Versión:** .NET Framework 4.7.2
 
