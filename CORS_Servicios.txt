@@ -1,0 +1,52 @@
+Habilitar CORS
+
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
+
+Visual Studio, from the Tools menu, select NuGet Package Manager, then select Package Manager Console. 
+In the Package Manager Console window, type the following command:
+
+                    Install-Package Microsoft.AspNet.WebApi.Cors
+
+Open the file App_Start/WebApiConfig.cs.
+                    using System.Web.Http;
+
+In Class: WebApiConfig
+     In Register method add:
+                    config.EnableCors();
+
+For example:
+namespace WebService
+{
+    public static class WebApiConfig
+    {
+        public static void Register(HttpConfiguration config)
+        {
+            // New code
+            config.EnableCors();
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+        }
+    }
+}
+
+=======================================================================
+
+In the Controller class before definition the class, for example
+
+add the [EnableCors] attribute to the TestController class:
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Cors;
+
+namespace WebService.Controllers
+{
+    [EnableCors(origins: "http://mywebclient.azurewebsites.net", headers: "*", methods: "*")]
+    public class TestController : ApiController
+    {
+        // Controller methods not shown...
+    }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a8135a5e86541429b2f98f2dd547c5e" Name="Diagram1">
+        <EntityTypeShape EntityType="proyectandoModel.Cargo" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Ciudad" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Cliente" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Control" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.DetalleControl" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Direccion" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Empleado" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Estado" Width="1.5" PointX="3.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Fase" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.FaseProceso" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Proceso" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Proyecto" Width="1.5" PointX="6" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.ProyectoFase" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Telefono" Width="1.5" PointX="9" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.TipoTel" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.TipoTelefono" Width="1.5" PointX="6.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectandoModel.Usuario" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <AssociationConnector Association="proyectandoModel.FK__Empleado__id_car__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Direccion__id_ci__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Direccion__docum__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Proyecto__docume__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Telefono__docume__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Control__documen__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__DetalleCo__id_co__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__DetalleCo__id_fa__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Empleado__id_tip__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Usuario__documen__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Proyecto__id_est__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__FaseProce__id_fa__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__FaseProce__id_pr__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__ProyectoF__id_fa__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__ProyectoF__id_pr__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectandoModel.FK__Telefono__id_tip__5BE2A6F2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

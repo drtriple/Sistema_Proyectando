@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Backend_Proyectando.Areas.HelpPage.ModelDescriptions
+namespace backend_proyectando.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="proyectandoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="id_cargo" />
+          </Key>
+          <Property Name="id_cargo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="text" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="id_ciudad" />
+          </Key>
+          <Property Name="id_ciudad" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="departamento" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="pais" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="documento" />
+          </Key>
+          <Property Name="documento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Control">
+          <Key>
+            <PropertyRef Name="id_control" />
+          </Key>
+          <Property Name="id_control" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documentoEmpleado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="observaciones" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleControl">
+          <Key>
+            <PropertyRef Name="idDetalleControl" />
+          </Key>
+          <Property Name="idDetalleControl" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_control" Type="bigint" Nullable="false" />
+          <Property Name="id_fase_proceso" Type="bigint" Nullable="false" />
+          <Property Name="horas" Type="int" Nullable="false" />
+          <Property Name="comentarios" Type="text" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="id_direccion" />
+          </Key>
+          <Property Name="id_direccion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documentoCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_ciudad" Type="bigint" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="documento" />
+          </Key>
+          <Property Name="documento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="id_cargo" Type="bigint" />
+          <Property Name="id_tipo_telefono" Type="bigint" />
+          <Property Name="esUsuario" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="text" />
+        </EntityType>
+        <EntityType Name="Fase">
+          <Key>
+            <PropertyRef Name="id_fase" />
+          </Key>
+          <Property Name="id_fase" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="orden" Type="int" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="FaseProceso">
+          <Key>
+            <PropertyRef Name="id_fase_proceso" />
+          </Key>
+          <Property Name="id_fase_proceso" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_fase" Type="bigint" Nullable="false" />
+          <Property Name="id_proceso" Type="bigint" Nullable="false" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Proceso">
+          <Key>
+            <PropertyRef Name="id_proceso" />
+          </Key>
+          <Property Name="id_proceso" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="text" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="id_proyecto" />
+          </Key>
+          <Property Name="id_proyecto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="descripcion" Type="text" />
+          <Property Name="fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="fecha_fin_estim" Type="date" Nullable="false" />
+          <Property Name="id_estado" Type="bigint" />
+          <Property Name="documentoCliente" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProyectoFase">
+          <Key>
+            <PropertyRef Name="id_proyecto_fase" />
+          </Key>
+          <Property Name="id_proyecto_fase" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_faseProceso" Type="bigint" Nullable="false" />
+          <Property Name="id_proyecto" Type="bigint" Nullable="false" />
+          <Property Name="fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="fecha_fin" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="id_telefono" />
+          </Key>
+          <Property Name="id_telefono" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documentoCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_tipo_telefono" Type="bigint" />
+          <Property Name="numero" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="TipoTel">
+          <Key>
+            <PropertyRef Name="id_tipo_telefono" />
+          </Key>
+          <Property Name="id_tipo_telefono" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoTelefono">
+          <Key>
+            <PropertyRef Name="id_tipo_telefono" />
+          </Key>
+          <Property Name="id_tipo_telefono" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="documentoEmp" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Control__documen__787EE5A0">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Control" Type="Self.Control" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Control">
+              <PropertyRef Name="documentoEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetalleCo__id_co__7B5B524B">
+          <End Role="Control" Type="Self.Control" Multiplicity="1" />
+          <End Role="DetalleControl" Type="Self.DetalleControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Control">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="DetalleControl">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetalleCo__id_fa__7C4F7684">
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="1" />
+          <End Role="DetalleControl" Type="Self.DetalleControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FaseProceso">
+              <PropertyRef Name="id_fase_proceso" />
+            </Principal>
+            <Dependent Role="DetalleControl">
+              <PropertyRef Name="id_fase_proceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__docum__571DF1D5">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="documentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__id_ci__5812160E">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="id_ciudad" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="id_ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__id_car__5FB337D6">
+          <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="id_cargo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__id_tip__60A75C0F">
+          <End Role="TipoTel" Type="Self.TipoTel" Multiplicity="0..1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTel">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FaseProce__id_fa__70DDC3D8">
+          <End Role="Fase" Type="Self.Fase" Multiplicity="1" />
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fase">
+              <PropertyRef Name="id_fase" />
+            </Principal>
+            <Dependent Role="FaseProceso">
+              <PropertyRef Name="id_fase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FaseProce__id_pr__71D1E811">
+          <End Role="Proceso" Type="Self.Proceso" Multiplicity="1" />
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proceso">
+              <PropertyRef Name="id_proceso" />
+            </Principal>
+            <Dependent Role="FaseProceso">
+              <PropertyRef Name="id_proceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Proyecto__docume__68487DD7">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="documentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Proyecto__id_est__6754599E">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProyectoF__id_fa__74AE54BC">
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="1" />
+          <End Role="ProyectoFase" Type="Self.ProyectoFase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FaseProceso">
+              <PropertyRef Name="id_fase_proceso" />
+            </Principal>
+            <Dependent Role="ProyectoFase">
+              <PropertyRef Name="id_faseProceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProyectoF__id_pr__75A278F5">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="ProyectoFase" Type="Self.ProyectoFase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="id_proyecto" />
+            </Principal>
+            <Dependent Role="ProyectoFase">
+              <PropertyRef Name="id_proyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Telefono__docume__5CD6CB2B">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="documentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Telefono__id_tip__5BE2A6F2">
+          <End Role="TipoTelefono" Type="Self.TipoTelefono" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTelefono">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__documen__6477ECF3">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="documentoEmp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="proyectandoModelStoreContainer">
+          <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Control" EntityType="Self.Control" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleControl" EntityType="Self.DetalleControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fase" EntityType="Self.Fase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaseProceso" EntityType="Self.FaseProceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proceso" EntityType="Self.Proceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proyecto" EntityType="Self.Proyecto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProyectoFase" EntityType="Self.ProyectoFase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Telefono" EntityType="Self.Telefono" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoTel" EntityType="Self.TipoTel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoTelefono" EntityType="Self.TipoTelefono" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Control__documen__787EE5A0" Association="Self.FK__Control__documen__787EE5A0">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Control" EntitySet="Control" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetalleCo__id_co__7B5B524B" Association="Self.FK__DetalleCo__id_co__7B5B524B">
+            <End Role="Control" EntitySet="Control" />
+            <End Role="DetalleControl" EntitySet="DetalleControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetalleCo__id_fa__7C4F7684" Association="Self.FK__DetalleCo__id_fa__7C4F7684">
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+            <End Role="DetalleControl" EntitySet="DetalleControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__docum__571DF1D5" Association="Self.FK__Direccion__docum__571DF1D5">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__id_ci__5812160E" Association="Self.FK__Direccion__id_ci__5812160E">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__id_car__5FB337D6" Association="Self.FK__Empleado__id_car__5FB337D6">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__id_tip__60A75C0F" Association="Self.FK__Empleado__id_tip__60A75C0F">
+            <End Role="TipoTel" EntitySet="TipoTel" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FaseProce__id_fa__70DDC3D8" Association="Self.FK__FaseProce__id_fa__70DDC3D8">
+            <End Role="Fase" EntitySet="Fase" />
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FaseProce__id_pr__71D1E811" Association="Self.FK__FaseProce__id_pr__71D1E811">
+            <End Role="Proceso" EntitySet="Proceso" />
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Proyecto__docume__68487DD7" Association="Self.FK__Proyecto__docume__68487DD7">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Proyecto__id_est__6754599E" Association="Self.FK__Proyecto__id_est__6754599E">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProyectoF__id_fa__74AE54BC" Association="Self.FK__ProyectoF__id_fa__74AE54BC">
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+            <End Role="ProyectoFase" EntitySet="ProyectoFase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProyectoF__id_pr__75A278F5" Association="Self.FK__ProyectoF__id_pr__75A278F5">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="ProyectoFase" EntitySet="ProyectoFase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Telefono__docume__5CD6CB2B" Association="Self.FK__Telefono__docume__5CD6CB2B">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Telefono__id_tip__5BE2A6F2" Association="Self.FK__Telefono__id_tip__5BE2A6F2">
+            <End Role="TipoTelefono" EntitySet="TipoTelefono" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__documen__6477ECF3" Association="Self.FK__Usuario__documen__6477ECF3">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="proyectandoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cargo">
+          <Key>
+            <PropertyRef Name="id_cargo" />
+          </Key>
+          <Property Name="id_cargo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__id_car__5FB337D6" FromRole="Cargo" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="id_ciudad" />
+          </Key>
+          <Property Name="id_ciudad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="departamento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pais" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Direccion__id_ci__5812160E" FromRole="Ciudad" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="documento" />
+          </Key>
+          <Property Name="documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK__Direccion__docum__571DF1D5" FromRole="Cliente" ToRole="Direccion" />
+          <NavigationProperty Name="Proyecto" Relationship="Self.FK__Proyecto__docume__68487DD7" FromRole="Cliente" ToRole="Proyecto" />
+          <NavigationProperty Name="Telefono" Relationship="Self.FK__Telefono__docume__5CD6CB2B" FromRole="Cliente" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="Control">
+          <Key>
+            <PropertyRef Name="id_control" />
+          </Key>
+          <Property Name="id_control" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documentoEmpleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Control__documen__787EE5A0" FromRole="Control" ToRole="Empleado" />
+          <NavigationProperty Name="DetalleControl" Relationship="Self.FK__DetalleCo__id_co__7B5B524B" FromRole="Control" ToRole="DetalleControl" />
+        </EntityType>
+        <EntityType Name="DetalleControl">
+          <Key>
+            <PropertyRef Name="idDetalleControl" />
+          </Key>
+          <Property Name="idDetalleControl" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_control" Type="Int64" Nullable="false" />
+          <Property Name="id_fase_proceso" Type="Int64" Nullable="false" />
+          <Property Name="horas" Type="Int32" Nullable="false" />
+          <Property Name="comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Control" Relationship="Self.FK__DetalleCo__id_co__7B5B524B" FromRole="DetalleControl" ToRole="Control" />
+          <NavigationProperty Name="FaseProceso" Relationship="Self.FK__DetalleCo__id_fa__7C4F7684" FromRole="DetalleControl" ToRole="FaseProceso" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="id_direccion" />
+          </Key>
+          <Property Name="id_direccion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documentoCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_ciudad" Type="Int64" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="Ciudad" Relationship="Self.FK__Direccion__id_ci__5812160E" FromRole="Direccion" ToRole="Ciudad" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Direccion__docum__571DF1D5" FromRole="Direccion" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="documento" />
+          </Key>
+          <Property Name="documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="id_cargo" Type="Int64" />
+          <Property Name="id_tipo_telefono" Type="Int64" />
+          <Property Name="esUsuario" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cargo" Relationship="Self.FK__Empleado__id_car__5FB337D6" FromRole="Empleado" ToRole="Cargo" />
+          <NavigationProperty Name="Control" Relationship="Self.FK__Control__documen__787EE5A0" FromRole="Empleado" ToRole="Control" />
+          <NavigationProperty Name="TipoTel" Relationship="Self.FK__Empleado__id_tip__60A75C0F" FromRole="Empleado" ToRole="TipoTel" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__documen__6477ECF3" FromRole="Empleado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Proyecto" Relationship="Self.FK__Proyecto__id_est__6754599E" FromRole="Estado" ToRole="Proyecto" />
+        </EntityType>
+        <EntityType Name="Fase">
+          <Key>
+            <PropertyRef Name="id_fase" />
+          </Key>
+          <Property Name="id_fase" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="orden" Type="Int32" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="FaseProceso" Relationship="Self.FK__FaseProce__id_fa__70DDC3D8" FromRole="Fase" ToRole="FaseProceso" />
+        </EntityType>
+        <EntityType Name="FaseProceso">
+          <Key>
+            <PropertyRef Name="id_fase_proceso" />
+          </Key>
+          <Property Name="id_fase_proceso" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_fase" Type="Int64" Nullable="false" />
+          <Property Name="id_proceso" Type="Int64" Nullable="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="DetalleControl" Relationship="Self.FK__DetalleCo__id_fa__7C4F7684" FromRole="FaseProceso" ToRole="DetalleControl" />
+          <NavigationProperty Name="Fase" Relationship="Self.FK__FaseProce__id_fa__70DDC3D8" FromRole="FaseProceso" ToRole="Fase" />
+          <NavigationProperty Name="Proceso" Relationship="Self.FK__FaseProce__id_pr__71D1E811" FromRole="FaseProceso" ToRole="Proceso" />
+          <NavigationProperty Name="ProyectoFase" Relationship="Self.FK__ProyectoF__id_fa__74AE54BC" FromRole="FaseProceso" ToRole="ProyectoFase" />
+        </EntityType>
+        <EntityType Name="Proceso">
+          <Key>
+            <PropertyRef Name="id_proceso" />
+          </Key>
+          <Property Name="id_proceso" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="FaseProceso" Relationship="Self.FK__FaseProce__id_pr__71D1E811" FromRole="Proceso" ToRole="FaseProceso" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="id_proyecto" />
+          </Key>
+          <Property Name="id_proyecto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_fin_estim" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_estado" Type="Int64" />
+          <Property Name="documentoCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Proyecto__docume__68487DD7" FromRole="Proyecto" ToRole="Cliente" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK__Proyecto__id_est__6754599E" FromRole="Proyecto" ToRole="Estado" />
+          <NavigationProperty Name="ProyectoFase" Relationship="Self.FK__ProyectoF__id_pr__75A278F5" FromRole="Proyecto" ToRole="ProyectoFase" />
+        </EntityType>
+        <EntityType Name="ProyectoFase">
+          <Key>
+            <PropertyRef Name="id_proyecto_fase" />
+          </Key>
+          <Property Name="id_proyecto_fase" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_faseProceso" Type="Int64" Nullable="false" />
+          <Property Name="id_proyecto" Type="Int64" Nullable="false" />
+          <Property Name="fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha_fin" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FaseProceso" Relationship="Self.FK__ProyectoF__id_fa__74AE54BC" FromRole="ProyectoFase" ToRole="FaseProceso" />
+          <NavigationProperty Name="Proyecto" Relationship="Self.FK__ProyectoF__id_pr__75A278F5" FromRole="ProyectoFase" ToRole="Proyecto" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="id_telefono" />
+          </Key>
+          <Property Name="id_telefono" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documentoCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_tipo_telefono" Type="Int64" />
+          <Property Name="numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Telefono__docume__5CD6CB2B" FromRole="Telefono" ToRole="Cliente" />
+          <NavigationProperty Name="TipoTelefono" Relationship="Self.FK__Telefono__id_tip__5BE2A6F2" FromRole="Telefono" ToRole="TipoTelefono" />
+        </EntityType>
+        <EntityType Name="TipoTel">
+          <Key>
+            <PropertyRef Name="id_tipo_telefono" />
+          </Key>
+          <Property Name="id_tipo_telefono" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__id_tip__60A75C0F" FromRole="TipoTel" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="TipoTelefono">
+          <Key>
+            <PropertyRef Name="id_tipo_telefono" />
+          </Key>
+          <Property Name="id_tipo_telefono" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Telefono" Relationship="Self.FK__Telefono__id_tip__5BE2A6F2" FromRole="TipoTelefono" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="documentoEmp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Usuario__documen__6477ECF3" FromRole="Usuario" ToRole="Empleado" />
+        </EntityType>
+        <Association Name="FK__Empleado__id_car__5FB337D6">
+          <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargo">
+              <PropertyRef Name="id_cargo" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_cargo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__id_ci__5812160E">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="id_ciudad" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="id_ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Direccion__docum__571DF1D5">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="documentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Proyecto__docume__68487DD7">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="documentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Telefono__docume__5CD6CB2B">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="documentoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Control__documen__787EE5A0">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Control" Type="Self.Control" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Control">
+              <PropertyRef Name="documentoEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetalleCo__id_co__7B5B524B">
+          <End Role="Control" Type="Self.Control" Multiplicity="1" />
+          <End Role="DetalleControl" Type="Self.DetalleControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Control">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="DetalleControl">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetalleCo__id_fa__7C4F7684">
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="1" />
+          <End Role="DetalleControl" Type="Self.DetalleControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FaseProceso">
+              <PropertyRef Name="id_fase_proceso" />
+            </Principal>
+            <Dependent Role="DetalleControl">
+              <PropertyRef Name="id_fase_proceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empleado__id_tip__60A75C0F">
+          <End Role="TipoTel" Type="Self.TipoTel" Multiplicity="0..1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTel">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__documen__6477ECF3">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="documentoEmp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Proyecto__id_est__6754599E">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FaseProce__id_fa__70DDC3D8">
+          <End Role="Fase" Type="Self.Fase" Multiplicity="1" />
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fase">
+              <PropertyRef Name="id_fase" />
+            </Principal>
+            <Dependent Role="FaseProceso">
+              <PropertyRef Name="id_fase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FaseProce__id_pr__71D1E811">
+          <End Role="Proceso" Type="Self.Proceso" Multiplicity="1" />
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proceso">
+              <PropertyRef Name="id_proceso" />
+            </Principal>
+            <Dependent Role="FaseProceso">
+              <PropertyRef Name="id_proceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProyectoF__id_fa__74AE54BC">
+          <End Role="FaseProceso" Type="Self.FaseProceso" Multiplicity="1" />
+          <End Role="ProyectoFase" Type="Self.ProyectoFase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FaseProceso">
+              <PropertyRef Name="id_fase_proceso" />
+            </Principal>
+            <Dependent Role="ProyectoFase">
+              <PropertyRef Name="id_faseProceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProyectoF__id_pr__75A278F5">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="ProyectoFase" Type="Self.ProyectoFase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="id_proyecto" />
+            </Principal>
+            <Dependent Role="ProyectoFase">
+              <PropertyRef Name="id_proyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Telefono__id_tip__5BE2A6F2">
+          <End Role="TipoTelefono" Type="Self.TipoTelefono" Multiplicity="0..1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTelefono">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="id_tipo_telefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="proyectandoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cargo" EntityType="Self.Cargo" />
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Control" EntityType="Self.Control" />
+          <EntitySet Name="DetalleControl" EntityType="Self.DetalleControl" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" />
+          <EntitySet Name="Fase" EntityType="Self.Fase" />
+          <EntitySet Name="FaseProceso" EntityType="Self.FaseProceso" />
+          <EntitySet Name="Proceso" EntityType="Self.Proceso" />
+          <EntitySet Name="Proyecto" EntityType="Self.Proyecto" />
+          <EntitySet Name="ProyectoFase" EntityType="Self.ProyectoFase" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Telefono" EntityType="Self.Telefono" />
+          <EntitySet Name="TipoTel" EntityType="Self.TipoTel" />
+          <EntitySet Name="TipoTelefono" EntityType="Self.TipoTelefono" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Empleado__id_car__5FB337D6" Association="Self.FK__Empleado__id_car__5FB337D6">
+            <End Role="Cargo" EntitySet="Cargo" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__id_ci__5812160E" Association="Self.FK__Direccion__id_ci__5812160E">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Direccion__docum__571DF1D5" Association="Self.FK__Direccion__docum__571DF1D5">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Proyecto__docume__68487DD7" Association="Self.FK__Proyecto__docume__68487DD7">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Telefono__docume__5CD6CB2B" Association="Self.FK__Telefono__docume__5CD6CB2B">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Control__documen__787EE5A0" Association="Self.FK__Control__documen__787EE5A0">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Control" EntitySet="Control" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetalleCo__id_co__7B5B524B" Association="Self.FK__DetalleCo__id_co__7B5B524B">
+            <End Role="Control" EntitySet="Control" />
+            <End Role="DetalleControl" EntitySet="DetalleControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetalleCo__id_fa__7C4F7684" Association="Self.FK__DetalleCo__id_fa__7C4F7684">
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+            <End Role="DetalleControl" EntitySet="DetalleControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empleado__id_tip__60A75C0F" Association="Self.FK__Empleado__id_tip__60A75C0F">
+            <End Role="TipoTel" EntitySet="TipoTel" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__documen__6477ECF3" Association="Self.FK__Usuario__documen__6477ECF3">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Proyecto__id_est__6754599E" Association="Self.FK__Proyecto__id_est__6754599E">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FaseProce__id_fa__70DDC3D8" Association="Self.FK__FaseProce__id_fa__70DDC3D8">
+            <End Role="Fase" EntitySet="Fase" />
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FaseProce__id_pr__71D1E811" Association="Self.FK__FaseProce__id_pr__71D1E811">
+            <End Role="Proceso" EntitySet="Proceso" />
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProyectoF__id_fa__74AE54BC" Association="Self.FK__ProyectoF__id_fa__74AE54BC">
+            <End Role="FaseProceso" EntitySet="FaseProceso" />
+            <End Role="ProyectoFase" EntitySet="ProyectoFase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProyectoF__id_pr__75A278F5" Association="Self.FK__ProyectoF__id_pr__75A278F5">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="ProyectoFase" EntitySet="ProyectoFase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Telefono__id_tip__5BE2A6F2" Association="Self.FK__Telefono__id_tip__5BE2A6F2">
+            <End Role="TipoTelefono" EntitySet="TipoTelefono" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="proyectandoModelStoreContainer" CdmEntityContainer="proyectandoEntities">
+          <EntitySetMapping Name="Cargo">
+            <EntityTypeMapping TypeName="proyectandoModel.Cargo">
+              <MappingFragment StoreEntitySet="Cargo">
+                <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciudad">
+            <EntityTypeMapping TypeName="proyectandoModel.Ciudad">
+              <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="proyectandoModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Control">
+            <EntityTypeMapping TypeName="proyectandoModel.Control">
+              <MappingFragment StoreEntitySet="Control">
+                <ScalarProperty Name="id_control" ColumnName="id_control" />
+                <ScalarProperty Name="documentoEmpleado" ColumnName="documentoEmpleado" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleControl">
+            <EntityTypeMapping TypeName="proyectandoModel.DetalleControl">
+              <MappingFragment StoreEntitySet="DetalleControl">
+                <ScalarProperty Name="idDetalleControl" ColumnName="idDetalleControl" />
+                <ScalarProperty Name="id_control" ColumnName="id_control" />
+                <ScalarProperty Name="id_fase_proceso" ColumnName="id_fase_proceso" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="proyectandoModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="id_direccion" ColumnName="id_direccion" />
+                <ScalarProperty Name="documentoCliente" ColumnName="documentoCliente" />
+                <ScalarProperty Name="id_ciudad" ColumnName="id_ciudad" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="proyectandoModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+                <ScalarProperty Name="id_tipo_telefono" ColumnName="id_tipo_telefono" />
+                <ScalarProperty Name="esUsuario" ColumnName="esUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estado">
+            <EntityTypeMapping TypeName="proyectandoModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fase">
+            <EntityTypeMapping TypeName="proyectandoModel.Fase">
+              <MappingFragment StoreEntitySet="Fase">
+                <ScalarProperty Name="id_fase" ColumnName="id_fase" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FaseProceso">
+            <EntityTypeMapping TypeName="proyectandoModel.FaseProceso">
+              <MappingFragment StoreEntitySet="FaseProceso">
+                <ScalarProperty Name="id_fase_proceso" ColumnName="id_fase_proceso" />
+                <ScalarProperty Name="id_fase" ColumnName="id_fase" />
+                <ScalarProperty Name="id_proceso" ColumnName="id_proceso" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proceso">
+            <EntityTypeMapping TypeName="proyectandoModel.Proceso">
+              <MappingFragment StoreEntitySet="Proceso">
+                <ScalarProperty Name="id_proceso" ColumnName="id_proceso" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyecto">
+            <EntityTypeMapping TypeName="proyectandoModel.Proyecto">
+              <MappingFragment StoreEntitySet="Proyecto">
+                <ScalarProperty Name="id_proyecto" ColumnName="id_proyecto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="fecha_fin_estim" ColumnName="fecha_fin_estim" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="documentoCliente" ColumnName="documentoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProyectoFase">
+            <EntityTypeMapping TypeName="proyectandoModel.ProyectoFase">
+              <MappingFragment StoreEntitySet="ProyectoFase">
+                <ScalarProperty Name="id_proyecto_fase" ColumnName="id_proyecto_fase" />
+                <ScalarProperty Name="id_faseProceso" ColumnName="id_faseProceso" />
+                <ScalarProperty Name="id_proyecto" ColumnName="id_proyecto" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="proyectandoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telefono">
+            <EntityTypeMapping TypeName="proyectandoModel.Telefono">
+              <MappingFragment StoreEntitySet="Telefono">
+                <ScalarProperty Name="id_telefono" ColumnName="id_telefono" />
+                <ScalarProperty Name="documentoCliente" ColumnName="documentoCliente" />
+                <ScalarProperty Name="id_tipo_telefono" ColumnName="id_tipo_telefono" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoTel">
+            <EntityTypeMapping TypeName="proyectandoModel.TipoTel">
+              <MappingFragment StoreEntitySet="TipoTel">
+                <ScalarProperty Name="id_tipo_telefono" ColumnName="id_tipo_telefono" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoTelefono">
+            <EntityTypeMapping TypeName="proyectandoModel.TipoTelefono">
+              <MappingFragment StoreEntitySet="TipoTelefono">
+                <ScalarProperty Name="id_tipo_telefono" ColumnName="id_tipo_telefono" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="proyectandoModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="documentoEmp" ColumnName="documentoEmp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

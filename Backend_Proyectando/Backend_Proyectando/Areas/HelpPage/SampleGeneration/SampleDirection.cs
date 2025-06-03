@@ -1,4 +1,4 @@
-namespace Backend_Proyectando.Areas.HelpPage
+namespace backend_proyectando.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

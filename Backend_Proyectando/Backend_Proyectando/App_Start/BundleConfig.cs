@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Backend_Proyectando
+namespace backend_proyectando
 {
     public class BundleConfig
     {

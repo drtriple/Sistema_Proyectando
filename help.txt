@@ -1,0 +1,112 @@
+1- Agregar Cliente:
+Endpoint: api/cliente/agregar
+Método: POST
+Header: Content-Type -> application/json
+Body:
+{
+  "tbCliente": {
+    "documento": "123456789",
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "email": "juan.perez@email.com"
+  },
+  "telefonos": [
+    {
+      "id_tipo_telefono": 1,
+      "numero": "3001234567"
+    }
+  ],
+  "direcciones": [
+    {
+      "id_ciudad": 1,
+      "descripcion": "Calle 123 #45-67"
+    }
+  ]
+}
+
+
+2- Cambiar el estado de un cliente
+Endpoint: api/cliente/cambiarestado
+Método: PUT
+Header: Content-Type -> application/json
+Body:
+{
+  "documento": "1036899523",
+  "activo": false
+}
+
+3- Actualizar cliente
+Endpoint: api/cliente/actualizar
+Método: PUT
+Header: Content-Type -> application/json
+Body:
+{
+  "documento": "123456",
+  "email": "nuevo@email.com",
+  "Telefono": [
+    {
+      "id_telefono": 1,
+      "numero": "123456789",
+      "id_tipo_telefono": 2
+    }
+  ],
+  "Direccion": [
+    {
+      "id_direccion": 1,
+      "id_ciudad": 3,
+      "descripcion": "Calle actualizada"
+    }
+  ]
+}
+
+
+4- Login
+Endpoint: api/user/login
+Método: POST
+Header: Content-Type -> application/json
+Body:
+{
+    "username": "xxxxx",
+    "password": "xxxxx"
+}
+Code success: 200
+
+5- Crear proyecto
+Endpoint: api/proyecto/crear
+Método: POST
+Header: Content-Type -> application/json
+Body:
+{
+  "nombre": "Sistema de Inventario",
+  "descripcion": "Desarrollo para control de inventario",
+  "fecha_inicio": "2025-06-01",
+  "fecha_fin_estim": "2025-07-15",
+  "id_estado": 1,
+  "documentoCliente": "123456789"
+}
+
+
+6- Crear proyecto
+Endpoint: api/proyecto/asignarfase
+Método: POST
+Header: Content-Type -> application/json
+Body:
+{
+  "idFaseProceso": 2,
+  "idProyecto": 1,
+  "fechaInicio": "2025-06-02"
+}
+
+7- Registrar control
+Endpoint: api/control/registrar
+Método: POST
+Header: Content-Type -> application/json
+Body:
+{
+  "idProyectoFase": 10,
+  "documentoEmp": "103610361036",
+  "fecha": "2025-06-01",
+  "tiempo_empleado": 3.5,
+  "descripcion": "Maquetación de pantallas de login y dashboard",
+  "estado": "En progreso"
+}

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Backend_Proyectando.Areas.HelpPage.ModelDescriptions;
+using backend_proyectando.Areas.HelpPage.ModelDescriptions;
 
-namespace Backend_Proyectando.Areas.HelpPage.Models
+namespace backend_proyectando.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

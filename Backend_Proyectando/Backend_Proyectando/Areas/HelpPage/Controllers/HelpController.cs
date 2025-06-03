@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Backend_Proyectando.Areas.HelpPage.ModelDescriptions;
-using Backend_Proyectando.Areas.HelpPage.Models;
+using backend_proyectando.Areas.HelpPage.ModelDescriptions;
+using backend_proyectando.Areas.HelpPage.Models;
 
-namespace Backend_Proyectando.Areas.HelpPage.Controllers
+namespace backend_proyectando.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

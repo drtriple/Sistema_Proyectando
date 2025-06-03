@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante lo siguiente
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada a un ensamblado.
-[assembly: AssemblyTitle("Backend_Proyectando")]
+[assembly: AssemblyTitle("backend_proyectando")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Backend_Proyectando")]
+[assembly: AssemblyProduct("backend_proyectando")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID es para el ID. typelib cuando este proyecto esté expuesto a COM
-[assembly: Guid("432a05af-f439-4672-83f8-f85d9bdefe1f")]
+[assembly: Guid("6f0bb089-7f71-4266-8927-3eee116f85a3")]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //

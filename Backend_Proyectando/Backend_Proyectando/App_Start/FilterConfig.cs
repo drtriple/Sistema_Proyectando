@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Backend_Proyectando
+namespace backend_proyectando
 {
     public class FilterConfig
     {

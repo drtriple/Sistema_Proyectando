@@ -1,6 +1,6 @@
 using System;
 
-namespace Backend_Proyectando.Areas.HelpPage.ModelDescriptions
+namespace backend_proyectando.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

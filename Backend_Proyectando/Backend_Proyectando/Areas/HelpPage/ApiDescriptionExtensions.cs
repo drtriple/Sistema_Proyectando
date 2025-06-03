@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace Backend_Proyectando.Areas.HelpPage
+namespace backend_proyectando.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {
