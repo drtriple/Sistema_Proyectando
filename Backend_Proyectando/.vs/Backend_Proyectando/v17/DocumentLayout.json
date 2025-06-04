@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\controllers\\proyectocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\controllers\\proyectocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\class\\clsopeempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\class\\clsopeempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\controllers\\faseprocesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\controllers\\faseprocesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\controllers\\empleadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\controllers\\empleadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\class\\clsopeproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\class\\clsopeproyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\models\\tipotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\models\\tipotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\controllers\\controlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\controllers\\controlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\class\\clsopecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\class\\clsopecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|d:\\datos\\desktop\\itm\\quinto semestre\\programacion\\proyecto_final\\backend_proyectando\\backend_proyectando\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BEC4FD5-3A28-45CE-8F63-185AD927F08E}|backend_proyectando\\backend_proyectando.csproj|solutionrelative:backend_proyectando\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,80 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProyectoController.cs",
-              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\ProyectoController.cs",
-              "RelativeDocumentMoniker": "backend_proyectando\\Controllers\\ProyectoController.cs",
-              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\ProyectoController.cs",
-              "RelativeToolTip": "backend_proyectando\\Controllers\\ProyectoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T18:47:53.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FaseProcesoController.cs",
-              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\FaseProcesoController.cs",
-              "RelativeDocumentMoniker": "backend_proyectando\\Controllers\\FaseProcesoController.cs",
-              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\FaseProcesoController.cs",
-              "RelativeToolTip": "backend_proyectando\\Controllers\\FaseProcesoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T18:46:17.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "backend_proyectando\\Controllers\\ClienteController.cs",
-              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "backend_proyectando\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "backend_proyectando\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "backend_proyectando\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T18:45:11.373Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ControlController.cs",
-              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\ControlController.cs",
-              "RelativeDocumentMoniker": "backend_proyectando\\Controllers\\ControlController.cs",
-              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\ControlController.cs",
-              "RelativeToolTip": "backend_proyectando\\Controllers\\ControlController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T18:43:51.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "clsOpeControl.cs",
-              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Class\\clsOpeControl.cs",
-              "RelativeDocumentMoniker": "backend_proyectando\\Class\\clsOpeControl.cs",
-              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Class\\clsOpeControl.cs",
-              "RelativeToolTip": "backend_proyectando\\Class\\clsOpeControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T18:41:59.309Z",
+              "WhenOpened": "2025-06-04T04:12:44.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "clsOpeProyecto.cs",
-              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Class\\clsOpeProyecto.cs",
-              "RelativeDocumentMoniker": "backend_proyectando\\Class\\clsOpeProyecto.cs",
-              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Class\\clsOpeProyecto.cs",
-              "RelativeToolTip": "backend_proyectando\\Class\\clsOpeProyecto.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCYAAAAxAAAAAAAAAA==",
+              "Title": "TipoTel.cs",
+              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Models\\TipoTel.cs",
+              "RelativeDocumentMoniker": "backend_proyectando\\Models\\TipoTel.cs",
+              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Models\\TipoTel.cs",
+              "RelativeToolTip": "backend_proyectando\\Models\\TipoTel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T03:31:36.636Z",
+              "WhenOpened": "2025-06-04T04:09:50.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmpleadoController.cs",
+              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\EmpleadoController.cs",
+              "RelativeDocumentMoniker": "backend_proyectando\\Controllers\\EmpleadoController.cs",
+              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Controllers\\EmpleadoController.cs",
+              "RelativeToolTip": "backend_proyectando\\Controllers\\EmpleadoController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T03:56:38.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsOpeEmpleado.cs",
+              "DocumentMoniker": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Class\\clsOpeEmpleado.cs",
+              "RelativeDocumentMoniker": "backend_proyectando\\Class\\clsOpeEmpleado.cs",
+              "ToolTip": "D:\\Datos\\Desktop\\ITM\\QUINTO SEMESTRE\\PROGRAMACION\\proyecto_final\\backend_proyectando\\backend_proyectando\\Class\\clsOpeEmpleado.cs",
+              "RelativeToolTip": "backend_proyectando\\Class\\clsOpeEmpleado.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwG8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T03:56:13.957Z",
               "EditorCaption": ""
             }
           ]

@@ -9,6 +9,7 @@
 
 namespace backend_proyectando.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -22,8 +23,10 @@ namespace backend_proyectando.Models
     
         public long id_tipo_telefono { get; set; }
         public string descripcion { get; set; }
-    
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }

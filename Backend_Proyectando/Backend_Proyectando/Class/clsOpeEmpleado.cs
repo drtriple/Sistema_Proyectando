@@ -2,12 +2,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 public class clsOpeEmpleado
 {
     private proyectandoEntities obd = new proyectandoEntities();
     public Empleado tbEmpleado { get; set; }
     public Usuario tbUsuario { get; set; }
+
+    public class EmpleadoDTO
+    {
+        public string documento { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string email { get; set; }
+        public string telefono { get; set; }
+        public int idtipoTelefono { get; set; }
+        public string tipoTelefonoNombre { get; set; }
+
+        public int idcargo { get; set; }
+        public string cargoNombre { get; set; }
+        public bool esUsuario { get; set; }
+    }
+
 
     public string AgregarEmpleado()
     {
@@ -76,12 +93,28 @@ public class clsOpeEmpleado
         return "Empleado actualizado.";
     }
 
-    public Empleado ConsultarEmpleado(string documento)
+    public EmpleadoDTO ConsultarEmpleado(string documento)
     {
-        return obd.Empleado
-              .Include("Cargo")
-              .Include("TipoTel")
-              .FirstOrDefault(e => e.documento == documento);
+        var emp = obd.Empleado
+             .Include("Cargo")
+             .Include("TipoTel")
+             .FirstOrDefault(e => e.documento == documento);
+
+        if (emp == null) return null;
+
+        return new EmpleadoDTO
+        {
+            documento = emp.documento,
+            nombre = emp.nombre,
+            apellido = emp.apellido,
+            email = emp.email,
+            telefono = emp.telefono,
+            idtipoTelefono = (int)(emp.TipoTel?.id_tipo_telefono),
+            tipoTelefonoNombre = emp.TipoTel?.descripcion,
+            idcargo = (int)(emp.Cargo?.id_cargo),
+            cargoNombre = emp.Cargo?.nombre,
+            esUsuario = emp.esUsuario
+        };
     }
 
     public List<Empleado> ListarEmpleados()

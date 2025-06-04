@@ -38,7 +38,6 @@ namespace backend_proyectando.Models
         [JsonIgnore]
         public virtual TipoTel TipoTel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Usuario> Usuario { get; set; }
 
     }
